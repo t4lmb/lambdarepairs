@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Free Quote - Lambda Repairs | Professional Tech Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZDEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojY2M0YTFhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNkNjdiMTg7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSJ1cmwoI2dyYWQxKSIvPgogIDwhLS0gTGFtYmRhIHN5bWJvbCAtLT4KICA8dGV4dCB4PSIxNiIgeT0iMjUiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCBUYWhvbWEsIEdlbmV2YSwgVmVyZGFuYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7OuzwvdGV4dD4KPC9zdmc+">
+    <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZDEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojY2M0YTFhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNkNjdiMTg7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSJ1cmwoI2dyYWQxKSIvPgogIDwhLS0gTGFtYmRhIHN5bWJvbCAtLT4KICA8dGV4dCB4PSIxNiIgeT0iMjUiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCBUYWhvbWEsIEdlbmV2YSwgVmVyZGFuYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7OuzwvdGV4dD4KPC9zdmc+">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-container {
+            text-align: center;
+            color: white;
+        }
+
+        .lambda-loader {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .loading-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: white;
+            border-radius: 2px;
+            animation: loadProgress 2s ease-out forwards;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active {
+            transform: rotate(90deg);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links.mobile-open {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%);
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: block;
+            text-align: center;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .hero-quote {
+            background: linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0,0,0,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.25) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="0.8"><path d="M0 20h40M20 0v40"/><circle cx="20" cy="20" r="3" fill="rgba(0,0,0,0.2)"/><rect x="15" y="5" width="10" height="6" rx="1" fill="rgba(0,0,0,0.15)"/><rect x="25" y="25" width="8" height="4" rx="1" fill="rgba(0,0,0,0.15)"/><rect x="5" y="15" width="6" height="8" rx="1" fill="rgba(0,0,0,0.15)"/></g></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-quote h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-quote p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .quote-intro {
+            background: white;
+            text-align: center;
+        }
+
+        .quote-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .quote-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .quote-form-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .quote-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-step {
+            margin-bottom: 2rem;
+        }
+
+        .form-step h3 {
+            color: #cc4a1a;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-number {
+            background: #cc4a1a;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            min-height: 48px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #cc4a1a;
+            box-shadow: 0 0 0 3px rgba(204, 74, 26, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(204, 74, 26, 0.1);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            min-height: auto;
+        }
+
+        .urgency-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .urgency-option {
+            position: relative;
+        }
+
+        .urgency-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .urgency-option label {
+            display: block;
+            padding: 1rem;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .urgency-option input[type="radio"]:checked + label {
+            background: rgba(204, 74, 26, 0.1);
+            border-color: #cc4a1a;
+            color: #cc4a1a;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(204, 74, 26, 0.3);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-quote h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-links.mobile-open {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .quote-form-container {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .urgency-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .submit-btn {
+                width: 100%;
+                padding: 18px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-quote h1 {
+                font-size: 2rem;
+            }
+            
+            .quote-form-container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="lambda-loader">λ</div>
+            <div class="loading-text">Loading Lambda Repairs</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">λ</span>
+                Lambda Repairs
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+                <li><a href="index.html#about" onclick="closeMobileMenu()">About</a></li>
+                <li><a href="#" class="active">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-quote">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get Your Free Quote</h1>
+                <p>Tell me about your tech needs and I'll provide a detailed, no-obligation quote within 24 hours</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section quote-intro">
+        <div class="container">
+            <h2>Professional Tech Services Quote</h2>
+            <p>Fill out the form below with as much detail as possible. The more information you provide, the more accurate your quote will be. All quotes are completely free with no obligation.</p>
+        </div>
+    </section>
+
+    <section class="quote-form-section">
+        <div class="container">
+            <div class="quote-form-container">
+                <form id="quoteForm">
+                    <div class="form-step">
+                        <h3><span class="step-number">1</span> Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location (City/Area)</label>
+                            <input type="text" id="location" name="location" placeholder="e.g., Saint John, Fredericton">
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <h3><span class="step-number">2</span> What Services Do You Need?</h3>
+                        <p style="color: #666; margin-bottom: 1rem;">Select all that apply:</p>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="setup" name="services" value="Computer Setup">
+                                <label for="setup">Computer/Device Setup</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="repair" name="services" value="Computer Repair">
+                                <label for="repair">Computer Repair</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="virus" name="services" value="Virus Removal">
+                                <label for="virus">Virus/Malware Removal</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="upgrade" name="services" value="Hardware Upgrade">
+                                <label for="upgrade">Hardware Upgrade</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="data" name="services" value="Data Recovery">
+                                <label for="data">Data Recovery/Migration</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="network" name="services" value="Network Setup">
+                                <label for="network">Network/Wi-Fi Setup</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mobile" name="services" value="Mobile Device">
+                                <label for="mobile">Mobile Device Repair</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="business" name="services" value="Business IT">
+                                <label for="business">Business IT Support</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="other" name="services" value="Other">
+                                <label for="other">Other (specify below)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <h3><span class="step-number">3</span> Device Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="deviceType">Device Type</label>
+                                <select id="deviceType" name="deviceType">
+                                    <option value="">Select device type</option>
+                                    <option value="Desktop PC">Desktop PC</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Mac">Mac (Desktop/Laptop)</option>
+                                    <option value="Tablet">Tablet</option>
+                                    <option value="Smartphone">Smartphone</option>
+                                    <option value="Multiple Devices">Multiple Devices</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="deviceAge">Approximate Age</label>
+                                <select id="deviceAge" name="deviceAge">
+                                    <option value="">Select age</option>
+                                    <option value="Less than 1 year">Less than 1 year</option>
+                                    <option value="1-2 years">1-2 years</option>
+                                    <option value="3-5 years">3-5 years</option>
+                                    <option value="5+ years">5+ years</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceBrand">Brand/Model (if known)</label>
+                            <input type="text" id="deviceBrand" name="deviceBrand" placeholder="e.g., Dell Inspiron, MacBook Pro, iPhone 13">
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <h3><span class="step-number">4</span> Describe Your Issue</h3>
+                        <div class="form-group">
+                            <label for="problemDescription">Detailed Description *</label>
+                            <textarea id="problemDescription" name="problemDescription" required 
+                                placeholder="Please describe your tech issue or service needs in detail. Include:
+• What symptoms you're experiencing
+• When the problem started
+• What you were doing when it occurred
+• Any error messages you've seen
+• Steps you've already tried
+
+The more detail you provide, the more accurate your quote will be."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="previousAttempts">Have you tried fixing this yourself or taken it elsewhere?</label>
+                            <textarea id="previousAttempts" name="previousAttempts" 
+                                placeholder="Please describe any repair attempts, what was tried, and the results."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <h3><span class="step-number">5</span> Timeline & Preferences</h3>
+                        <div class="form-group">
+                            <label>How urgent is this repair?</label>
+                            <div class="urgency-options">
+                                <div class="urgency-option">
+                                    <input type="radio" id="emergency" name="urgency" value="Emergency (Same Day)">
+                                    <label for="emergency">
+                                        <strong>Emergency</strong><br>
+                                        Same day service needed
+                                    </label>
+                                </div>
+                                <div class="urgency-option">
+                                    <input type="radio" id="urgent" name="urgency" value="Urgent (1-2 Days)">
+                                    <label for="urgent">
+                                        <strong>Urgent</strong><br>
+                                        Within 1-2 days
+                                    </label>
+                                </div>
+                                <div class="urgency-option">
+                                    <input type="radio" id="normal" name="urgency" value="Normal (3-5 Days)" checked>
+                                    <label for="normal">
+                                        <strong>Normal</strong><br>
+                                        Within 3-5 days
+                                    </label>
+                                </div>
+                                <div class="urgency-option">
+                                    <input type="radio" id="flexible" name="urgency" value="Flexible (1-2 Weeks)">
+                                    <label for="flexible">
+                                        <strong>Flexible</strong><br>
+                                        Within 1-2 weeks
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceLocation">Preferred Service Location</label>
+                                <select id="serviceLocation" name="serviceLocation">
+                                    <option value="">Select preference</option>
+                                    <option value="On-site (My Location)">On-site at my location</option>
+                                    <option value="Drop-off">I'll drop it off</option>
+                                    <option value="Pick-up Service">Pick-up service</option>
+                                    <option value="Remote Support">Remote support (if possible)</option>
+                                    <option value="No Preference">No preference</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Estimated Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="Under $100">Under $100</option>
+                                    <option value="$100 - $250">$100 - $250</option>
+                                    <option value="$250 - $500">$250 - $500</option>
+                                    <option value="$500 - $1000">$500 - $1000</option>
+                                    <option value="Over $1000">Over $1000</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalNotes">Additional Notes or Questions</label>
+                            <textarea id="additionalNotes" name="additionalNotes" 
+                                placeholder="Any other information you'd like me to know, special requirements, or questions about the service."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="submit-btn">Get My Free Quote</button>
+                        <div class="contact-info">
+                            <p><strong>Need immediate help?</strong></p>
+                            <p>Call: (506) 343-5626 | Email: info@lambdarepairs.com</p>
+                            <p>I'll respond to your quote request within 24 hours</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lambda Repairs. All rights reserved. | Personal Tech Services in Saint John & Fredericton, NB | Licensed & Insured</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileToggle = document.getElementById('mobileMenuToggle');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            
+            navLinks.classList.toggle('mobile-open');
+            mobileToggle.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('mobile-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileToggle = document.getElementById('mobileMenuToggle');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            
+            navLinks.classList.remove('mobile-open');
+            mobileToggle.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('mobile-open')) {
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('fade-out');
+                
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 500);
+            }, 2000);
+        });
+
+(function(){
+    emailjs.init("hLOdhP8SvD7jeSSsq");
+})();
+
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Sending Quote Request...';
+    submitBtn.disabled = true;
+    submitBtn.style.background = '#6c757d';
+    
+    const formData = new FormData(this);
+    
+    const services = [];
+    document.querySelectorAll('input[name="services"]:checked').forEach(checkbox => {
+        services.push(checkbox.value);
+    });
+    
+    const templateParams = {
+        from_name: `${formData.get('firstName')} ${formData.get('lastName')}`,
+        from_email: formData.get('email'),
+        phone: formData.get('phone') || 'Not provided',
+        location: formData.get('location') || 'Not provided',
+        services: services.length > 0 ? services.join(', ') : 'Not specified',
+        device_type: formData.get('deviceType') || 'Not specified',
+        device_age: formData.get('deviceAge') || 'Not specified',
+        device_brand: formData.get('deviceBrand') || 'Not specified',
+        problem_description: formData.get('problemDescription'),
+        previous_attempts: formData.get('previousAttempts') || 'None mentioned',
+        urgency: formData.get('urgency') || 'Not specified',
+        service_location: formData.get('serviceLocation') || 'Not specified',
+        budget: formData.get('budget') || 'Not specified',
+        additional_notes: formData.get('additionalNotes') || 'None',
+        submit_date: new Date().toLocaleString()
+    };
+    
+    emailjs.send("service_r0on7hl", "template_57zz65a", templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            submitBtn.textContent = 'Quote Request Sent!';
+            submitBtn.style.background = '#28a745';
+            
+            alert('Thank you! Your quote request has been sent successfully. I will respond within 24 hours with your detailed quote.');
+            
+            document.getElementById('quoteForm').reset();
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = 'linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%)';
+            }, 3000);
+            
+        }, function(error) {
+            console.log('FAILED...', error);
+            
+            submitBtn.textContent = 'Send Failed - Try Again';
+            submitBtn.style.background = '#dc3545';
+            
+            alert('There was an issue sending your request directly. Opening your email client as backup...');
+            
+            const emailSubject = `Free Quote Request from ${templateParams.from_name}`;
+                    const emailBody = `
+NEW QUOTE REQUEST - Lambda Repairs
+
+CONTACT INFORMATION:
+Name: ${templateParams.from_name}
+Email: ${templateParams.from_email}
+Phone: ${templateParams.phone}
+Location: ${templateParams.location}
+
+SERVICES REQUESTED:
+${templateParams.services}
+
+DEVICE INFORMATION:
+Type: ${templateParams.device_type}
+Age: ${templateParams.device_age}
+Brand/Model: ${templateParams.device_brand}
+
+PROBLEM DESCRIPTION:
+${templateParams.problem_description}
+
+PREVIOUS REPAIR ATTEMPTS:
+${templateParams.previous_attempts}
+
+TIMELINE & PREFERENCES:
+Urgency: ${templateParams.urgency}
+Service Location: ${templateParams.service_location}
+Budget Range: ${templateParams.budget}
+
+ADDITIONAL NOTES:
+${templateParams.additional_notes}
+---
+
+Submitted: ${templateParams.submit_date}
+            `.trim();
+            
+            const mailtoLink = `mailto:info@lambdarepairs.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = 'linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%)';
+            }, 3000);
+        });
+});
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(204, 74, 26, 0.95)';
+                header.style.backdropFilter = 'blur(15px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #cc4a1a 0%, #d67b18 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>

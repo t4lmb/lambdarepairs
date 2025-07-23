@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc4a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d67b18;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="100" cy="100" r="100" fill="url(#mainGrad)"/>
+  
+  <!-- Lambda symbol -->
+  <text x="100" y="148" 
+        font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" 
+        font-size="144" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle">λ</text>
+</svg>
